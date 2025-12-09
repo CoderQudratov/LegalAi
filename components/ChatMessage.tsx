@@ -57,4 +57,17 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
                   href={source.uri}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-1.5 bg-slate-900/50 hover:bg-blue-900/30 border border-slate-700 hover:border-blue
+                  className="px-3 py-1.5 bg-slate-900/50 hover:bg-blue-900/30 border border-slate-700 hover:border-blue-500 transition-colors rounded-lg text-xs text-blue-300 truncate max-w-[200px]"
+                >
+                  {source.title}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default ChatMessage;

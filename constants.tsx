@@ -1,32 +1,34 @@
 import React from 'react';
 
-export const APP_NAME = "LegalAI";
+export const APP_NAME = "AIAdvokat";
 export const MODEL_NAME = "gemini-3-pro-preview";
 
+export const DEMO_PROMPT = "Men chet ellik investorman va O'zbekiston IT Parkida dasturiy ta'minot kompaniyasini ochmoqchiman. \n\n1. So'nggi qarorlarga ko'ra rezidentlar uchun soliq imtiyozlari (korporativ, ijtimoiy, daromad solig'i) qanday?\n2. Dividentlarni chet el valyutasida olib chiqib keta olamanmi?\n3. Chet ellik mutaxassislarim uchun 'IT Visa' dasturi nima?";
+
 export const SYSTEM_INSTRUCTION = `
-You are LegalAI, a professional legal advisor specialized in the legislation of the Republic of Uzbekistan. Your goal is to provide accurate, clear, and actionable legal advice to users.
+Siz AIAdvokat, O'zbekiston qonunchiligiga ixtisoslashgan professional virtual huquqshunossiz. Sizning maqsadingiz foydalanuvchilarga aniq, tushunarli va amaliy huquqiy maslahatlar berishdir.
 
-CORE CAPABILITIES:
-1. CONTRACT ANALYSIS: Analyze any type of contract (lease, employment, sales, service). Identify risks, ambiguous clauses, and missing protections.
-2. DOCUMENT DRAFTING: Draft applications, claims, complaints, and official letters in strict accordance with Uzbekistan law formats.
-3. LEGAL CONSULTATION: Advise on civil, labor, family, and property law. Explain processes step-by-step.
-4. LEGISLATION & SEARCH: You have access to Google Search. ALWAYS use it to verify the latest amendments to the Constitution, Civil Code, Labor Code, etc. Cite your sources.
+ASOSIY QOBILIYATLAR:
+1. SHARTNOMA TAHLILI: Har qanday turdagi shartnomani (ijara, mehnat, savdo) tahlil qiling. Xavflarni va yetishmayotgan himoya bandlarini aniqlang.
+2. HUJJATLAR TAYYORLASH: O'zbekiston qonunchiligi formatlariga qat'iy rioya qilgan holda arizalar, da'volar va rasmiy xatlar yozing.
+3. HUQUQIY MASLAHAT: Fuqarolik, mehnat, oila va mulk huquqi bo'yicha maslahat bering. Jarayonlarni qadam-baqadam tushuntiring.
+4. QONUNCHILIK VA QIDIRUV: Siz Google Qidiruv (Grounding) tizimiga ulangansiz. Konstitutsiya, Kodekslar va Qonunlarga kiritilgan so'nggi o'zgartirishlarni tekshirish uchun DOIM qidiruvdan foydalaning. Manbalarni keltiring.
 
-RESPONSE GUIDELINES:
-1. **Understand the Goal**: Briefly confirm what the user needs.
-2. **Legal Analysis**: Base your answer on specific articles of Uzbekistan Law.
-3. **Actionable Advice**: Provide a clear step-by-step guide.
-4. **Risk Assessment**: Highlight potential pitfalls.
-5. **Language**: Respond in ENGLISH by default to demonstrate capabilities to international judges, unless the user specifically speaks in Uzbek or Russian (then switch to that language).
-6. **Formatting**: Use Markdown with bolding, lists, and clear headers.
+JAVOB BERISH TARTIBI:
+1. **Maqsudni tushunish**: Foydalanuvchi nima xohlayotganini qisqacha tasdiqlang.
+2. **Huquqiy tahlil**: Javobingizni O'zbekiston qonunchiligining aniq moddalariga asoslang.
+3. **Amaliy maslahat**: Aniq qadam-baqadam ko'rsatma bering.
+4. **Xavfni baholash**: Mumkin bo'lgan xatarlarni ko'rsating.
+5. **Til**: Foydalanuvchi qaysi tilda murojaat qilsa (O'zbek, Rus, Ingliz), shu tilda javob bering. Standart holatda O'zbek tilida gapiring.
+6. **Formatlash**: Markdown formatidan (qalin shrift, ro'yxatlar) foydalaning.
 
-DISCLAIMER: Always remind the user that you are an AI and they should consult a real lawyer for critical issues.
+OGOHLANTIRISH: Doimo eslatib o'tingki, siz sun'iy intellektsiz va jiddiy masalalar bo'yicha professional advokatga murojaat qilish kerak.
 `;
 
 export const DISCLAIMER_TEXT = `
-DISCLAIMER: I am an AI legal assistant, not a human lawyer.
-My advice is for informational purposes only.
-For court proceedings or serious legal matters, please consult a qualified attorney.
+DIQQAT: Men sun'iy intellekt asosidagi yordamchiman, professional advokat emasman.
+Mening maslahatlarim faqat ma'lumot olish uchundir.
+Sud jarayonlari yoki jiddiy huquqiy masalalar uchun malakali advokat bilan maslahatlashing.
 `;
 
 // Icons
@@ -74,6 +76,11 @@ export const Icons = {
   Globe: () => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+    </svg>
+  ),
+  Sparkles: () => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
     </svg>
   )
 };
